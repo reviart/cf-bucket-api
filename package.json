@@ -1,14 +1,38 @@
 {
+  "name": "cf-bucket-api",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "deploy-production": "wrangler deploy --env --minify production",
+    "dev": "wrangler dev",
+    "lint": "./node_modules/.bin/eslint 'src/**/*.js'",
+    "prepare": "husky install",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reviart/cf-bucket-api.git"
+  },
+  "author": "Revi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reviart/cf-bucket-api/issues"
+  },
+  "homepage": "https://github.com/reviart/cf-bucket-api#readme",
   "dependencies": {
-    "hono": "^4.3.11"
+    "aws4fetch": "^1.0.18",
+    "hono": "^4.3.11",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240512.0",
-    "wrangler": "^3.47.0"
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^8.0.3",
+    "wrangler": "^3.0.0"
   }
 }

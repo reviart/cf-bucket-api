@@ -1,7 +1,13 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "cf-bucket-api"
-main = "src/index.ts"
+main = "src/index.js"
 compatibility_date = "2024-05-24"
+node_compat = true
+vars = { repositoryName = "cf-bucket-api", environment = "dev" }
+
+[env.production]
+name = "cf-bucket-api-production"
+vars = { repositoryName = "cf-bucket-api", environment = "production" }
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Worker, running it closer to your back-end infrastructure

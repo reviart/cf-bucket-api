@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2020": true
+  },
+  "extends": [
+    "airbnb-base",
+  ],
+  "rules": {
+    "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
+    "no-restricted-syntax": ["off", "ForOfStatement"],
+    "func-names": ["error", "never"],
+    "max-len": [
+      "error",
+      {
+        "code": 120, 
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals":true,
+        "ignoreComments": true
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 11
+  }
+}
